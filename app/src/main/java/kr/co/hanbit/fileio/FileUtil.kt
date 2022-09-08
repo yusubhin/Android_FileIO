@@ -1,10 +1,10 @@
 package kr.co.hanbit.fileio
 
 import java.io.*
-
-class FileUtil {
+/*
+open class FileUtil {
     /* 파일 읽기 메서드 */
-    fun readTextFile(fullPath: String): String {
+    open fun readTextFile(fullPath: String): String {
         val file = File(fullPath)
         if (!file.exists()) return "" //파일이 없으면 공백 리턴
 
@@ -22,11 +22,11 @@ class FileUtil {
     }
 
     /* 파일 쓰기 메서드 */
-    fun writeTextFile(directory: String, filename: String, content: String) {
+    open fun writeTextFile(directory: String, filename: String, content: String) {
         /* 파라미터 1: 디렉터리, 2: 파일명, 3: 작성할 내용 */
-        val dir = File(directory)
+        val dir = File(filesDir.path + "/" + directory) //파일 읽기
         if (!dir.exists()) {
-            dir.mkdirs()
+            dir.mkdirs() //디렉토리 생성
         }
         val writer = FileWriter(directory + "/" + filename) //FileWriter 생성
         val buffer = BufferedWriter(writer) //속도 향상
@@ -34,3 +34,4 @@ class FileUtil {
         buffer.close()
     }
 }
+*/
